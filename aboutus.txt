@@ -1,0 +1,9 @@
+<section id="about">
+  <h2>About Us</h2>
+  <p style="text-align:center;">
+    ShopNexa is a modern online shopping platform focused on delivering quality clothing,
+    cosmetics, and selected food products such as tea leaves.
+    Our goal is to make online shopping simple, affordable, and reliable for everyone.
+    We are committed to honest service, product quality, and customer satisfaction.
+  </p>
+</section>
