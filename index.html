@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopNexa | Smart Online Shopping</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+header {
+    background: #0a7cff;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+nav {
+    background: #054a91;
+    padding: 12px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+h2 {
+    text-align: center;
+    color: #054a91;
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.hidden {
+    display: none;
+}
+.login-box {
+    max-width: 350px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: #0a7cff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background: #054a91;
+}
+footer {
+    background: #0a7cff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ShopNexa</h1>
+<p>Smart Online Shopping for Everyday Needs</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#login">Login</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+<h2>Welcome to ShopNexa</h2>
+<p style="text-align:center;">
+Please login to view our products and offers.
+</p>
+</section>
+
+<!-- LOGIN SECTION -->
+<section id="login">
+<h2>Customer Login</h2>
+<div class="login-box">
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<p id="loginMsg" style="color:red; text-align:center;"></p>
+</div>
+</section>
+
+<!-- PRODUCTS (HIDDEN UNTIL LOGIN) -->
+<section id="products" class="hidden">
+<h2>Our Products</h2>
+
+<div class="products">
+<div class="card">
+<h3>Clothing</h3>
+<p>Stylish and comfortable fashion.</p>
+<p><b>Price:</b> Coming Soon</p>
+</div>
+
+<div class="card">
+<h3>Cosmetics</h3>
+<p>Beauty and personal care products.</p>
+<p><b>Price:</b> Coming Soon</p>
+</div>
+
+<div class="card">
+<h3>Food Products</h3>
+<p>Tea leaves and selected food items.</p>
+<p><b>Price:</b> Coming Soon</p>
+</div>
+</div>
+
+<br>
+<button onclick="logout()">Logout</button>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p style="text-align:center;">📧 kopalitopu32@gmail.com</p>
+<p style="text-align:center;">📘 Facebook: Topu Kopali</p>
+</section>
+
+<footer>
+<p>© 2026 ShopNexa. All Rights Reserved.</p>
+</footer>
+
+<script>
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (user === "customer" && pass === "1234") {
+        document.getElementById("products").classList.remove("hidden");
+        document.getElementById("loginMsg").innerText = "";
+        alert("Login successful!");
+    } else {
+        document.getElementById("loginMsg").innerText = "Invalid login details";
+    }
+}
+
+function logout() {
+    document.getElementById("products").classList.add("hidden");
+    alert("Logged out");
+}
+</script>
+
+</body>
+</html>
