@@ -1,0 +1,30 @@
+<script>
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (user === "customer" && pass === "1234") {
+        localStorage.setItem("loggedIn", "true");
+        showProducts();
+        alert("Login successful!");
+    } else {
+        document.getElementById("loginMsg").innerText = "Invalid login details";
+    }
+}
+
+function logout() {
+    localStorage.removeItem("loggedIn");
+    document.getElementById("products").classList.add("hidden");
+    alert("Logged out");
+}
+
+function showProducts() {
+    document.getElementById("products").classList.remove("hidden");
+}
+
+window.onload = function () {
+    if (localStorage.getItem("loggedIn") === "true") {
+        showProducts();
+    }
+};
+</script>
